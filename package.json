@@ -1,0 +1,21 @@
+{
+    "name": "node-project-setup",
+    "version": "1.0.0",
+    "description": "This is a basic setup for a NodeJS project",
+    "author": "Mattias E. Mignone <memignone@gmail.com>",
+    "license": "MIT",
+    "main": "server.js",
+    "repository": "https://github.com/memignone/Node-project-setup.git",
+    "scripts": {
+        "start": "node src/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "express",
+        "mongodb",
+        "nodejs"
+    ],
+    "dependencies": {
+        "express": "^4.16.4"
+    }
+}
