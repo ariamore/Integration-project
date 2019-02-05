@@ -5,14 +5,15 @@ services:
     build: .
     command: npm start
     depends_on:
-      - db
+      - mongo
     environment:
+      DB_URL: mongodb://mongo/db
       NODE_ENV: development
     ports:
       - "9000:9000"
     volumes:
       - .:/app
-  db:
+  mongo:
     environment:
       MONGO_INITDB_DATABASE: db
       MONGO_INITDB_ROOT_USERNAME: root
