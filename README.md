@@ -1,5 +1,5 @@
 # NodeJS project setup
-This is a basic setup for a NodeJS project.
+This is a basic NodeJS integration project.
 
 The main tools used are:
 - [Docker](https://hub.docker.com/)
