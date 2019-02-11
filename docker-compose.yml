@@ -10,7 +10,6 @@ services:
       DB_URL: mongodb://root:root@mongo:27017/
       NODE_ENV: development
       WEB_PORT: 9000
-    image: memignone/basic-node-app:latest
     ports:
       - "9000:9000"
     volumes:
