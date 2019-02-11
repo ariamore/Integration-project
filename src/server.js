@@ -26,9 +26,9 @@ app.get('/', (req, res) => {
   .then(last_visits => res.send(`
     <h1>Welcome to this site!</h1>
     <h3>Most recent visits:</h3>
-      <ol>${last_visits.length
-            ? last_visits.map(v => `<li>${v.timestamp}</li>`).join('')
-            : `<li>This is the first visit ever!</li>`}</ol>`))
+    <ol>${last_visits.length
+          ? last_visits.map(v => `<li>${v.timestamp}</li>`).join('')
+          : `<li>This is the first visit ever!</li>`}</ol>`))
   .catch(error => console.error(error))
   // Insert new visit
   req.app.locals.visit.insertOne({timestamp: curr_time_iso})
