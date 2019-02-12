@@ -5,4 +5,4 @@ WORKDIR /app
 # Retrieve all code
 COPY . .
 # Install dependencies
-RUN npm install
+RUN npm install --only=production
