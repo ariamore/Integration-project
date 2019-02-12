@@ -5,7 +5,7 @@ const MongoClient = require('mongodb').MongoClient
 const app = express()
 
 // DB connection
-MongoClient.connect(process.env.DB_URL, { reconnectInterval: 500, reconnectTries: 3, useNewUrlParser: true})
+MongoClient.connect(process.env.DB_URL, {useNewUrlParser: true})
 .then(connection => {
   const db = connection.db(process.env.DB_NAME)
   console.log(`The connection to ${process.env.DB_NAME} was established successfully!`)
