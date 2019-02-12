@@ -22,6 +22,8 @@ spec:
           value: my_db
         - name: DB_URL
           value: mongodb://root:root@mongo:27017/
+        - name: NODE_ENV
+          value: production
         - name: WEB_PORT
           value: "9000"
         image: memignone/basic-node-app:latest
