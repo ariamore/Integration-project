@@ -11,7 +11,7 @@ The main tools used are:
 Steps to run it inside Kubernetes:
 - Install [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) and [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 - Start the minikube with:
-    - Windows 10 with Hyper-V: `minikube start --vm-driver=hyperv --hyperv-virtual-switch="minikube-switch"`
+    - Windows 10 with Hyper-V: [link](https://medium.com/@JockDaRock/minikube-on-windows-10-with-hyper-v-6ef0f4dc158c) `minikube start --vm-driver=hyperv --hyperv-virtual-switch="minikube-switch"`
     - Other: `minikube start`
 - Deploy:
     - `kubectl create -f ./production/db-volume.yaml`
