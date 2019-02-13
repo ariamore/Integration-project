@@ -17,7 +17,7 @@ Steps to run it inside Kubernetes:
 - Install [Helm](https://docs.helm.sh/using_helm/#quickstart)
 - Deploy using Helm:
     - `helm install --name db -f ./production/mongo-values.yaml stable/mongodb`
-    - `helm install --name app ./app-chart/`
+    - `helm install --name app ./production/app-chart/`
 - Access the app with: `minikube service app`
 - Access the dashboard with: `minikube dashboard`
 
