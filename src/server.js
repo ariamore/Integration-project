@@ -33,6 +33,11 @@ app.get('/', (req, res) => {
   // Insert new visit
   req.app.locals.visit.insertOne({timestamp: curr_time_iso})
   .catch(error => console.error(error))
+  // Log success
+  if(process.env.POD_IP && process.env.POD_NAME)
+    console.log(`Visit recorded at ${curr_time_iso} by POD ${process.env.POD_NAME} @ ${process.env.POD_IP}`)
+  else
+    console.log(`Visit recorded at ${curr_time_iso}`)
 })
 
 // Fire request listener
