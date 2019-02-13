@@ -5,7 +5,7 @@
     "author": "Mattias E. Mignone <memignone@gmail.com>",
     "license": "MIT",
     "main": "server.js",
-    "repository": "https://github.com/memignone/Node-project-setup.git",
+    "repository": "https://github.com/memignone/Integration-project.git",
     "scripts": {
         "start": "node src/server.js",
         "test": "echo \"Error: no test specified\" && exit 1"
