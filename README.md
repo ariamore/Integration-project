@@ -1,5 +1,5 @@
-# NodeJS project setup
-This is a basic NodeJS integration project.
+# Integration project
+This is a basic integration project. The main scope is to experiment and learn about container-based apps and containerization.
 
 The main tools used are:
 - [Docker](https://hub.docker.com/)
