@@ -40,6 +40,12 @@ app.get('/', (req, res) => {
     console.log(`Visit recorded at ${curr_time_iso}`)
 })
 
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'UP',
+    timestamp: new Date().toISOString()})
+})
+
 // Fire request listener
 app.listen(process.env.WEB_PORT, () =>
   console.log(`Running on http://localhost:${process.env.WEB_PORT}`)
