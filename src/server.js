@@ -10,7 +10,6 @@ MongoClient.connect(process.env.DB_URL, {useNewUrlParser: true})
 .then(connection => {
   const db = connection.db(process.env.DB_NAME)
   console.log(`The connection to ${process.env.DB_NAME} was established successfully!`)
-  app.locals.visit = db.collection('visit')
   // Monitor connection
   db.on('close', () => console.log(`CLOSE event on ${db.databaseName}`))
   db.on('error', () => console.log(`ERROR event on ${db.databaseName}`))
