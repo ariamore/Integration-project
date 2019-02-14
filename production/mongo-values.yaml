@@ -46,8 +46,8 @@ mongodbRootPassword: root
 ## MongoDB custom user and database
 ## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#creating-a-user-and-database-on-first-run
 ##
-# mongodbUsername: username
-# mongodbPassword: password
+mongodbUsername: usr
+mongodbPassword: pass
 mongodbDatabase: my_db
 
 
