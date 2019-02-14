@@ -15,7 +15,6 @@ fullnameOverride: "app"
 service:
   type: LoadBalancer
   port: 9000
-  targetPort: 9000
 
 ingress:
   enabled: false
