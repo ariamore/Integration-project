@@ -22,5 +22,6 @@ Steps to run it inside Kubernetes:
 - Access the dashboard with: `minikube dashboard`
 
 Steps to update the image stored in DockerHub:
+- Transpile the code with Babel: `npm run build`
 - Build and tag the image locally: `docker build -f ./production/Dockerfile -t memignone/basic-node-app:latest .`
 - Push it to Docker Hub: `docker push memignone/basic-node-app:latest`
