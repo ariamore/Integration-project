@@ -1,9 +1,11 @@
-const express = require('express')
-const MongoClient = require('mongodb').MongoClient
+import express from 'express'
+import { MongoClient } from 'mongodb'
+
+import router from './routes'
 
 // App initialization
 const app = express()
-app.use(require('./routes'))
+app.use(router)
 
 // DB connection
 MongoClient.connect(process.env.DB_URL, {useNewUrlParser: true})
