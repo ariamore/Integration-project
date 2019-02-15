@@ -11,9 +11,9 @@ app.use(router)
 MongoClient.connect(process.env.DB_URL, {useNewUrlParser: true})
 .then(connection => {
   const db = connection.db(process.env.DB_NAME)
-  console.log(`The connection to ${process.env.DB_NAME} was established successfully!`)
   app.locals.visit = db.collection('visit')
-  // Monitor connection
+  console.log(`The connection to ${process.env.DB_NAME} was established successfully!`)
+  // Monitor connection state
   db.on('close', () => console.log(`CLOSE event on ${db.databaseName}`))
   db.on('error', () => console.log(`ERROR event on ${db.databaseName}`))
   db.on('reconnect', () => console.log(`RECONNECT event on ${db.databaseName}`))
@@ -23,4 +23,4 @@ MongoClient.connect(process.env.DB_URL, {useNewUrlParser: true})
   app.listen(process.env.WEB_PORT, () =>
     console.log(`Running on http://localhost:${process.env.WEB_PORT}`)
   )})
-.catch(error => console.error(`An error ocurred during conection: ${error}`))
+.catch(error => console.error('Error connecting to the DB', error))

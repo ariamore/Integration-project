@@ -14,15 +14,15 @@ router.get('/', (req, res) => {
     <ol>${last_visits.length
           ? last_visits.map(v => `<li>${v.timestamp}</li>`).join('')
           : `<li>This is the first visit ever!</li>`}</ol>`))
-  .catch(error => console.error(error))
   // Insert new visit
-  req.app.locals.visit.insertOne({timestamp: curr_time_iso})
-  .catch(error => console.error(error))
+  .then(() => req.app.locals.visit.insertOne({timestamp: curr_time_iso}))
   // Log success
-  if(process.env.POD_IP && process.env.POD_NAME)
-    console.log(`Visit recorded at ${curr_time_iso} by POD ${process.env.POD_NAME} @ ${process.env.POD_IP}`)
-  else
-    console.log(`Visit recorded at ${curr_time_iso}`)
+  .then(() => {
+    if(process.env.POD_IP && process.env.POD_NAME) {
+      console.log(`Visit recorded at ${curr_time_iso} by POD ${process.env.POD_NAME} @ ${process.env.POD_IP}`)
+    } else {
+      console.log(`Visit recorded at ${curr_time_iso}`)}})
+  .catch(error => console.error('Error communicating with the DB', error))
 })
 
 router.get('/health', (req, res) => {
