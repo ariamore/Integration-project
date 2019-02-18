@@ -14,10 +14,12 @@ Steps to run it inside Kubernetes:
 - Start the minikube with:
     - Windows 10 with Hyper-V: [link](https://medium.com/@JockDaRock/minikube-on-windows-10-with-hyper-v-6ef0f4dc158c) `minikube start --vm-driver=hyperv --hyperv-virtual-switch="minikube-switch"`
     - Other: `minikube start`
+- Enable metrics: `minikube addons enable metrics-server`
 - Install [Helm](https://docs.helm.sh/using_helm/#quickstart)
 - Deploy using Helm:
     - `helm install --name db -f ./production/mongo-values.yaml stable/mongodb`
     - `helm install --name app ./production/app-chart/`
+- Add an autoscaler: `kubectl autoscale deployment app --cpu-percent=30 --max=4`
 - Access the app with: `minikube service app`
 - Access the dashboard with: `minikube dashboard`
 
